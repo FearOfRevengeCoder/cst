@@ -166,7 +166,7 @@ public final class main extends JavaPlugin {
         if (target.equalsIgnoreCase("-")) {
             if (!(sender instanceof Player)) {
                 sender.sendMessage("⚠ Эта команда может быть выполнена только игроком.");
-                return targetPlayers; // Вернуть пустой список
+                return targetPlayers; 
             }
             targetPlayers.add((Player) sender);
         } else if (target.equalsIgnoreCase("*")) {
@@ -175,7 +175,7 @@ public final class main extends JavaPlugin {
             Player targetPlayer = getServer().getPlayer(target);
             if (targetPlayer == null) {
                 sender.sendMessage(ChatColor.RED + "⚠ Игрок не найден.");
-                return targetPlayers; // Вернуть пустой список
+                return targetPlayers; 
             }
             targetPlayers.add(targetPlayer);
         }
@@ -265,7 +265,7 @@ public final class main extends JavaPlugin {
     }
 
     private String translateColorCodes(String text) {
-        // Переводим HEX-коды
+ 
         Matcher matcher = HEX_PATTERN.matcher(text);
         StringBuffer buffer = new StringBuffer();
 
@@ -275,7 +275,7 @@ public final class main extends JavaPlugin {
         }
         matcher.appendTail(buffer);
 
-        // Переводим устаревшие цвета
+
         return ChatColor.translateAlternateColorCodes('&', buffer.toString());
     }
 }
